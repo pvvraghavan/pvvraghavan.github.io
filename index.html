@@ -731,6 +731,91 @@
       flex-wrap: wrap;
     }
 
+    /* RESEARCH */
+    .research-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 2.25rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+
+    .research-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--accent), var(--accent2));
+    }
+
+    .research-card:hover {
+      border-color: rgba(0,229,255,0.25);
+      transform: translateX(6px);
+    }
+
+    .research-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+
+    .research-status-dot {
+      width: 6px; height: 6px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: blink 1.5s ease-in-out infinite;
+    }
+
+    .research-status-dot.past {
+      background: var(--muted);
+      animation: none;
+    }
+
+    .research-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      line-height: 1.35;
+    }
+
+    .research-period {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      letter-spacing: 0.1em;
+    }
+
+    .research-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .research-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .research-tag {
+      padding: 0.2rem 0.6rem;
+      background: rgba(0,229,255,0.05);
+      border: 1px solid rgba(0,229,255,0.15);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--accent);
+    }
+
     /* FOOTER */
     footer {
       text-align: center;
@@ -806,6 +891,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#research">Research</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -844,20 +930,20 @@
     <div class="about-grid">
       <div class="about-text fade-up">
         <p>
-          I'm a <strong>Machine Learning Engineer and Software Developer</strong> currently pursuing my
+          I'm a <strong>Software Engineer and ML Practitioner</strong> currently pursuing my
           MSc in Computing Science at the <strong>University of Glasgow</strong>, with a background in
           Computer Science from DY Patil International University, Pune.
         </p>
         <p>
-          My work sits at the intersection of <strong>computer vision, data pipelines, and desktop application development</strong>.
-          I've spent the past two years building production ML systems and automation tools through
+          My work spans <strong>computer vision, industrial data pipelines, and systems development</strong>.
+          I've spent the past two years building production-adjacent ML systems and automation tools through
           industry internships — most notably a sponsored final year project with
-          <strong>Kristl Seibt India Pvt. Ltd.</strong> where I led a 4-member team building a YOLOv8-powered
-          component detection and inventory management system.
+          <strong>Kristl Seibt India Pvt. Ltd.</strong> where I built a YOLOv8-powered
+          component detection and inventory management system, validated against real PLC operational data.
         </p>
         <p>
           I'm a published researcher with a paper accepted at <strong>AICCoNS 2026</strong> and a strong
-          foundation in Python, SQL, PyTorch, and PyQt6. I'm fluent in Tamil and English, and
+          foundation in Python, Rust, SQL, PyTorch, and PyQt6. I'm fluent in Tamil and English, and
           currently learning German.
         </p>
       </div>
@@ -875,7 +961,7 @@
           <div class="stat-label">NPTEL Cloud — Top 5% nationally</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">3+</div>
+          <div class="stat-num">4+</div>
           <div class="stat-label">Projects shipped</div>
         </div>
       </div>
@@ -941,10 +1027,9 @@
         <div class="timeline-role">ML Project Intern (Industry-Sponsored)</div>
         <div class="timeline-company">Kristl Seibt India Pvt. Ltd. — Pune, India</div>
         <ul class="timeline-points">
-          <li>Led a 4-member team on an ML project for electrical design automation.</li>
-          <li>Developed Python data pipelines and a YOLOv8s computer vision model for component-level detection.</li>
+          <li>Designed and evaluated a YOLOv8s computer vision pipeline for automated electrical component detection, validated against real PLC operational data in a near-production environment.</li>
           <li>Designed automated PyQt6 dashboards for inventory monitoring and system performance.</li>
-          <li>Generated automated reports and BOM insights for manufacturing decision-making.</li>
+          <li>Generated automated BOM reports and data validation workflows for manufacturing decision-making.</li>
         </ul>
       </div>
 
@@ -953,9 +1038,9 @@
         <div class="timeline-role">Software Developer Intern</div>
         <div class="timeline-company">Kristl Seibt India Pvt. Ltd. — Pune, India</div>
         <ul class="timeline-points">
-          <li>Built Python automation tools to collect, store, and analyse test environment data.</li>
           <li>Built PyQt6 GUI with real-time Siemens S7 PLC communication using python-snap7.</li>
           <li>Stored and queried structured test data using PostgreSQL for reporting and analysis.</li>
+          <li>Designed the reporting pipeline to be modular, allowing new test metrics to be added without modifying core logic.</li>
         </ul>
       </div>
 
@@ -974,7 +1059,7 @@
         <div class="timeline-role">Software Developer Intern</div>
         <div class="timeline-company">Kristl Seibt India Pvt. Ltd. — Pune, India</div>
         <ul class="timeline-points">
-          <li>Developed a Python data visualisation tool to analyse automation test results.</li>
+          <li>Developed a Python data visualisation tool to analyse automation test results and surface performance anomalies.</li>
           <li>Created automated reporting workflows for engineering teams.</li>
         </ul>
       </div>
@@ -982,10 +1067,64 @@
     </div>
   </section>
 
+  <!-- RESEARCH EXPERIENCE -->
+  <section id="research" style="background: var(--bg2);">
+    <div class="section-header fade-up">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Research</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="research-card fade-up">
+      <div class="research-status">
+        <span class="research-status-dot"></span>
+        Active — Independent Research
+      </div>
+      <div class="research-title">Does an AI Discover Human Personality?</div>
+      <div class="research-period">APR 2026 — PRESENT</div>
+      <div class="research-desc">
+        Investigating whether an RL-trained conversational agent rediscovers personality structure
+        without being explicitly taught personality theory — benchmarked against Cattell's 16PF model.
+        System built on DialoGPT-medium with LoRA adapters; analysis uses linear probing, UMAP
+        clustering, and FDR-corrected correlation against 16PF scores.
+      </div>
+      <div class="research-tags">
+        <span class="research-tag">Reinforcement Learning</span>
+        <span class="research-tag">LLM</span>
+        <span class="research-tag">LoRA</span>
+        <span class="research-tag">DialoGPT</span>
+        <span class="research-tag">UMAP</span>
+        <span class="research-tag">Personality AI</span>
+      </div>
+    </div>
+
+    <div class="research-card fade-up">
+      <div class="research-status">
+        <span class="research-status-dot past"></span>
+        Completed — Industry-Sponsored FYP · Published at AICCoNS 2026
+      </div>
+      <div class="research-title">ML-Powered Component Detection and Inventory Management</div>
+      <div class="research-period">SEP 2024 — MAY 2025 · DY Patil International University × Kristl Seibt India Pvt. Ltd.</div>
+      <div class="research-desc">
+        Final year project sponsored by Kristl Seibt India Pvt. Ltd. Developed a machine learning
+        system for automated interpretation of electrical design diagrams using YOLOv8s, validated
+        against real PLC operational data. Led to a peer-reviewed publication accepted at AICCoNS 2026.
+      </div>
+      <div class="research-tags">
+        <span class="research-tag">YOLOv8s</span>
+        <span class="research-tag">Computer Vision</span>
+        <span class="research-tag">PyTorch</span>
+        <span class="research-tag">PLC Integration</span>
+        <span class="research-tag">AICCoNS 2026</span>
+      </div>
+    </div>
+
+  </section>
+
   <!-- PROJECTS -->
   <section id="projects">
     <div class="section-header fade-up">
-      <span class="section-num">04</span>
+      <span class="section-num">05</span>
       <h2 class="section-title">Projects</h2>
       <div class="section-line"></div>
     </div>
@@ -1006,7 +1145,25 @@
           <span class="project-tag">PostgreSQL</span>
           <span class="project-tag">Python</span>
         </div>
-        <a href="https://github.com/pvvraghavan" class="project-link">View on GitHub →</a>
+        <a href="https://github.com/pvvraghavan/ml-component-detection-inventory" class="project-link" target="_blank">View on GitHub →</a>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-label">🦀 Personal · Rust</div>
+        <div class="project-title">SQL Teacher — Rust CLI</div>
+        <div class="project-desc">
+          Terminal-based SQL teaching application built in Rust from scratch. Structured lessons,
+          gated quizzes (95% to proceed), persistent progress via JSON, and an interactive terminal UI
+          with coloured output and progress bars. Built to learn Rust through a real, useful project.
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Rust</span>
+          <span class="project-tag">CLI</span>
+          <span class="project-tag">serde</span>
+          <span class="project-tag">inquire</span>
+          <span class="project-tag">TOML</span>
+        </div>
+        <a href="https://github.com/pvvraghavan/sql-teacher" class="project-link" target="_blank">View on GitHub →</a>
       </div>
 
       <div class="project-card fade-up">
@@ -1014,28 +1171,14 @@
         <div class="project-title">Email Spam Detection System</div>
         <div class="project-desc">
           Desktop spam classifier built with Python and PyQt6. Integrates a Naive Bayes classification
-          model with data preprocessing and feature engineering for improved accuracy.
-          Clean, user-friendly GUI interface.
+          model chosen for interpretability and low latency, with data preprocessing and feature
+          engineering for improved accuracy.
         </div>
         <div class="project-tags">
           <span class="project-tag">Python</span>
           <span class="project-tag">PyQt6</span>
           <span class="project-tag">Naive Bayes</span>
           <span class="project-tag">NLP</span>
-        </div>
-      </div>
-
-      <div class="project-card fade-up">
-        <div class="project-label">Academic · Hardware</div>
-        <div class="project-title">RFID Attendance System</div>
-        <div class="project-desc">
-          Portable automated attendance system using Arduino and RC522 RFID modules.
-          Real-time tracking of students and staff with automatic data logging.
-        </div>
-        <div class="project-tags">
-          <span class="project-tag">Arduino</span>
-          <span class="project-tag">RFID</span>
-          <span class="project-tag">Embedded</span>
         </div>
       </div>
 
@@ -1061,7 +1204,7 @@
   <!-- PUBLICATIONS -->
   <section id="publications">
     <div class="section-header fade-up">
-      <span class="section-num">05</span>
+      <span class="section-num">06</span>
       <h2 class="section-title">Publications</h2>
       <div class="section-line"></div>
     </div>
@@ -1069,7 +1212,7 @@
     <div class="pub-card fade-up">
       <div class="pub-year">2026</div>
       <div>
-        <div class="pub-title">A Computer Vision Apprach for Electrical Design Component Detection and Management using Deep Learning</div>
+        <div class="pub-title">A Computer Vision Approach for Electrical Design Component Detection and Management using Deep Learning</div>
         <div class="pub-authors">Vaishnaw G. Kale, Vaishnav V. Prasad</div>
         <div class="pub-venue">Second International Conference on AI, Computation, Communication & Network Security (AICCoNS 2026) — University of Wollongong in Dubai</div>
         <span class="pub-badge">ACCEPTED · APRIL 2026</span>
@@ -1090,7 +1233,7 @@
   <!-- EDUCATION -->
   <section id="education">
     <div class="section-header fade-up">
-      <span class="section-num">06</span>
+      <span class="section-num">08</span>
       <h2 class="section-title">Education</h2>
       <div class="section-line"></div>
     </div>
@@ -1126,7 +1269,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>Designed & Built by Vaishnav Veeraraghavan Prasad · 2025</p>
+    <p>Designed & Built by Vaishnav Veeraraghavan Prasad · 2026</p>
   </footer>
 
   <script>
@@ -1162,7 +1305,7 @@
 
     // Scroll animations
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setTimeout(() => {
             entry.target.classList.add('visible');
