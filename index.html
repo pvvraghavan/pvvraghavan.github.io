@@ -696,6 +696,15 @@
       font-family: 'Space Mono', monospace;
     }
 
+    .edu-note {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 0.75rem;
+    }
+
+    .edu-note strong { color: var(--text); }
+
     /* CONTACT */
     .contact-wrapper {
       max-width: 700px;
@@ -903,13 +912,14 @@
     <div class="hero-content">
       <div class="avail-badge">
         <span class="avail-dot"></span>
-        Available — Summer 2026
+        Open to ML / Data roles
       </div>
       <div class="hero-tag">ML Engineer & Software Developer</div>
       <h1>Vaishnav<br><span>Veeraraghavan</span><br>Prasad</h1>
       <p class="hero-desc">
-        Building intelligent systems at the intersection of computer vision, data engineering, and automation.
-        MSc Computing Science at the University of Glasgow.
+        Building intelligent systems at the intersection of computer vision, efficient LLMs, and data engineering,
+        from model compression for edge devices to production-style ML pipelines.
+        MSc Computing Science (Merit), University of Glasgow.
       </p>
       <div class="hero-btns">
         <a href="#projects" class="btn btn-primary">View Projects →</a>
@@ -930,8 +940,8 @@
     <div class="about-grid">
       <div class="about-text fade-up">
         <p>
-          I'm a <strong>Software Engineer and ML Practitioner</strong> currently pursuing my
-          MSc in Computing Science at the <strong>University of Glasgow</strong>, with a background in
+          I'm a <strong>Software Engineer and ML Practitioner</strong> and
+          MSc in Computing Science (Merit) Graduate from the <strong>University of Glasgow</strong>, with a background in
           Computer Science from DY Patil International University, Pune.
         </p>
         <p>
@@ -943,7 +953,14 @@
         </p>
         <p>
           I'm a published researcher with a paper accepted at <strong>AICCoNS 2026</strong> and a strong
-          foundation in Python, Rust, SQL, PyTorch, and PyQt6. I'm fluent in Tamil and English, and
+          foundation in Python, Rust, SQL, PyTorch, and PyQt6.
+        </p>
+        <p>
+          My MSc dissertation built an <strong>architecture-adaptive LLM compression pipeline</strong>
+          (structured pruning, quantisation and LoRA recovery) that shrank TinyLlama-1.1B by
+          <strong>4.06×</strong> with no loss in classification accuracy, then ran it on an
+          <strong>STM32MP257F-DK</strong> edge board. Alongside it, I build end-to-end ML pipelines
+          with MLflow, FastAPI and Docker. I'm fluent in Tamil and English, and
           currently learning German.
         </p>
       </div>
@@ -961,7 +978,7 @@
           <div class="stat-label">NPTEL Cloud — Top 5% nationally</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">4+</div>
+          <div class="stat-num">6</div>
           <div class="stat-label">Projects shipped</div>
         </div>
       </div>
@@ -985,6 +1002,22 @@
           <span class="tag">Computer Vision</span>
           <span class="tag">Naive Bayes</span>
           <span class="tag">Object Detection</span>
+          <span class="tag">HuggingFace</span>
+          <span class="tag">LoRA Fine-tuning</span>
+          <span class="tag">Structured Pruning</span>
+          <span class="tag">Quantisation</span>
+          <span class="tag">NLP</span>
+        </div>
+      </div>
+      <div class="skill-group fade-up">
+        <div class="skill-group-title">MLOps & Serving</div>
+        <div class="skill-tags">
+          <span class="tag">MLflow</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Streamlit</span>
+          <span class="tag">llama.cpp</span>
+          <span class="tag">skops</span>
         </div>
       </div>
       <div class="skill-group fade-up">
@@ -1077,6 +1110,32 @@
 
     <div class="research-card fade-up">
       <div class="research-status">
+        <span class="research-status-dot past"></span>
+        Completed — MSc Dissertation · University of Glasgow · Merit
+      </div>
+      <div class="research-title">Model-Agnostic Structured Pruning and Recovery for Edge Deployment of Sub-7B Language Models</div>
+      <div class="research-period">MSc COMPUTING SCIENCE · 2026</div>
+      <div class="research-desc">
+        An architecture-adaptive compression pipeline combining gradient-guided structured MLP pruning,
+        low-bit quantisation and LoRA recovery. On TinyLlama-1.1B it cut model file size by 4.06×
+        (2,098.2 MB to 517.07 MB) while holding L1+L2 classification accuracy (88.93% to 88.95%).
+        The same pipeline carried over to Qwen2.5-1.5B with no architecture-specific changes (88.13% after
+        compression vs 90.4% baseline). Both compressed models were deployed on the STM32MP257F-DK edge
+        platform with CPU-only llama.cpp inference at 1.91 and 1.25 tokens/sec, and wrapped in a
+        Streamlit interface for compression and evaluation.
+      </div>
+      <div class="research-tags">
+        <span class="research-tag">LLM Compression</span>
+        <span class="research-tag">Structured Pruning</span>
+        <span class="research-tag">Quantisation</span>
+        <span class="research-tag">LoRA</span>
+        <span class="research-tag">Edge AI</span>
+        <span class="research-tag">llama.cpp</span>
+      </div>
+    </div>
+
+    <div class="research-card fade-up">
+      <div class="research-status">
         <span class="research-status-dot"></span>
         Active — Independent Research
       </div>
@@ -1129,6 +1188,46 @@
       <div class="section-line"></div>
     </div>
     <div class="projects-grid">
+
+      <div class="project-card fade-up">
+        <div class="project-label">⭐ MSc Dissertation · Merit</div>
+        <div class="project-title">Model-Agnostic Structured Pruning & Recovery for Edge LLMs</div>
+        <div class="project-desc">
+          Compression pipeline for sub-7B language models: gradient-guided structured MLP pruning,
+          low-bit quantisation and LoRA recovery. 4.06× smaller TinyLlama-1.1B at unchanged accuracy,
+          generalised to Qwen2.5-1.5B, and deployed on an STM32MP257F-DK board with llama.cpp.
+          Includes a Streamlit front end for compression and evaluation.
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">PyTorch</span>
+          <span class="project-tag">HuggingFace</span>
+          <span class="project-tag">LoRA</span>
+          <span class="project-tag">Pruning</span>
+          <span class="project-tag">llama.cpp</span>
+          <span class="project-tag">Streamlit</span>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-label">Personal · MLOps</div>
+        <div class="project-title">Customer Churn Pipeline: scikit-learn, PyTorch, MLflow, FastAPI, Docker</div>
+        <div class="project-desc">
+          End-to-end churn system on 2,500 synthetic customer records. A leakage-safe ColumnTransformer
+          pipeline lifts holdout ROC AUC from 0.596 (numeric-only baseline) to 0.852, with recall at the
+          0.35 retention threshold at 0.753. A PyTorch challenger (0.849) is compared in MLflow, and the
+          selected model is served through a validated FastAPI endpoint in a Docker container, with batch
+          risk ranking that handles unseen regions.
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">scikit-learn</span>
+          <span class="project-tag">PyTorch</span>
+          <span class="project-tag">MLflow</span>
+          <span class="project-tag">FastAPI</span>
+          <span class="project-tag">Docker</span>
+          <span class="project-tag">skops</span>
+        </div>
+        <a href="https://github.com/pvvraghavan/customer-churn-pipeline" class="project-link" target="_blank">View on GitHub →</a>
+      </div>
 
       <div class="project-card fade-up">
         <div class="project-label">⭐ Industry Sponsored · Final Year</div>
@@ -1233,20 +1332,23 @@
   <!-- EDUCATION -->
   <section id="education">
     <div class="section-header fade-up">
-      <span class="section-num">08</span>
+      <span class="section-num">07</span>
       <h2 class="section-title">Education</h2>
       <div class="section-line"></div>
     </div>
     <div class="edu-grid">
       <div class="edu-card fade-up">
-        <div class="edu-period">SEP 2025 — PRESENT</div>
+        <div class="edu-period">SEP 2025 — 2026 · MERIT</div>
         <div class="edu-degree">MSc Computing Science</div>
         <div class="edu-school">University of Glasgow, UK 🏴󠁧󠁢󠁳󠁣󠁴󠁿</div>
+        <div class="edu-note"><strong>Dissertation:</strong> Model-Agnostic Structured Pruning and Recovery for Edge Deployment of Sub-7B Language Models</div>
+        <div class="edu-note"><strong>Coursework:</strong> Deep Learning, Text as Data (NLP), Information Retrieval</div>
       </div>
       <div class="edu-card fade-up">
         <div class="edu-period">OCT 2021 — 2025</div>
         <div class="edu-degree">BTech Computer Science</div>
         <div class="edu-school">DY Patil International University, Pune 🇮🇳</div>
+        <div class="edu-note"><strong>Dissertation:</strong> A Computer Vision Approach for Electrical Design Component Detection and Management using Deep Learning</div>
       </div>
     </div>
   </section>
@@ -1256,7 +1358,7 @@
     <div class="contact-wrapper fade-up">
       <h2>Let's <span>Connect</span></h2>
       <p>
-        I'm open to Summer 2026 internships and graduate roles in ML engineering, data science,
+        I'm open to graduate roles in ML engineering, data science,
         and software development. Feel free to reach out — I'd love to chat.
       </p>
       <div class="contact-links">
